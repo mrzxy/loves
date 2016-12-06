@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>刘梦静你是我的！！！</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+
+<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<p>
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"张旭勇"</span>);<br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"刘梦静"</span>);<br />
+				
+				<span class="space"/><span class="comments">// 06月22号我姐把你带我身边.</span><br />
+				<span class="space"/><span class="comments">// 07月03号我第一次和你约会,哈哈你是那么的美！</span><br />
+				
+				<span class="comments">// 08月09号情人节给你的惊喜，但是你傻傻的！</span><br />			
+				u.accepted();<br />
+				<span class="comments">// 你答应做我的女朋友,我也第一次牵了你的手.</span><br />
+				Forever.link(i.hand,u.hand)<br />
+				<span class="comments">// 09月16号第一次亲你.</span><br />
+				<span class="comments">// 10月7号第一次吻你，你还是傻傻的，嘴巴紧紧闭着.</span><br />
+				i.kiss(u);<br />
+				<span class="comments">// 不过近距离看眼睛真的好眯啊.</span><br />
+				<span class="comments">// ...</span><br />	 	  
+		      </p>
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						静静, 我们在一起已经
+					  <div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						爱你.<br/>
+						<div class="signature">- 旭勇</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+
+            <embed src="media/backgroud_music.mp3" width="0" height="0"></embed>
+            
+  </div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2016, 6, 22);
+		together.setHours(23);
+		together.setMinutes(3);
+		together.setSeconds(3);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
